@@ -3,9 +3,11 @@
         <div class="row align-items-center">
 
             <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-                <form action="" class="site-block-top-search">
-                    <span class="icon icon-search2"></span>
-                    <input type="text" class="form-control border-0" placeholder="Search">
+                <form action="{{ route('tins.search') }}" method="GET" class="mb-4">
+                    <div class="form-group">
+                        <input type="text" name="search" class="form-control" placeholder="Tìm kiếm theo tiêu đề" value="{{ request()->input('search') }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
                 </form>
             </div>
 
@@ -14,24 +16,15 @@
                     <a href="index.html" class="js-logo-clone">NEWS 24H</a>
                 </div>
             </div>
-
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
                 <div class="site-top-icons">
                     <ul>
-                        <li><a href="#"><span class="icon icon-person"></span></a></li>
-                        <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
-                        <li>
-                            <a href="cart.html" class="site-cart">
-                                <span class="icon icon-shopping_cart"></span>
-                                <span class="count">2</span>
-                            </a>
-                        </li>
-                        <li class="d-inline-block d-md-none ml-md-0"><a href="#"
-                                class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a>
-                        </li>
+                        <li><a href="{{ route('login') }}"><span class="icon icon-login"></span> Login</a></li>
+                        <li><a href="{{ route('register') }}"><span class="icon icon-register"></span> Register</a></li>
                     </ul>
                 </div>
             </div>
+
 
         </div>
     </div>

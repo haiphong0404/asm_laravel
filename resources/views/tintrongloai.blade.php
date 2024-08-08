@@ -6,16 +6,20 @@
         </h1>
         @foreach($listtin as $t)
             <div class="row mb-4">
-                <div class="col-md-12">
+                <div class="col-md-4">
+                    <!-- Hiển thị ảnh từ URL -->
+                    <img src="{{'storage/' .$t->image }}" class="img-fluid rounded">
+                </div>
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">
                                 <a href="{{ url('/tin', [$t->id]) }}" class="text-decoration-none text-dark">
-                                    {{$t->tieuDe}}
+                                    {{ $t->title }}
                                 </a>
                             </h2>
                             <p class="card-text">
-                                {{ $t->tomTat }}
+                                {{ Str::limit($t->content, 150) }}
                             </p>
                         </div>
                     </div>
